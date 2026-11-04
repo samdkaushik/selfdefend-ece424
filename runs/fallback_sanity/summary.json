@@ -1,0 +1,17 @@
+{
+  "mode": "mock",
+  "records": 16,
+  "cases": 4,
+  "configurations": [
+    "target_only",
+    "pdirect",
+    "pintent",
+    "lightweight_pdirect"
+  ],
+  "synthetic_only": true,
+  "ASR": null,
+  "benign_acceptability": null,
+  "reason": "Human review required for research metrics; mock fixtures are not research results.",
+  "detector_errors": 6,
+  "target_errors": 0
+}

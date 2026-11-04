@@ -1,0 +1,11 @@
+# Keep cross-platform source and documentation consistent.
+* text=auto eol=lf
+*.pdf binary
+# These exact-byte snapshots are verified against stored SHA-256 fingerprints.
+runs/fallback_sanity/** -text
+snapshots/initial/harness.py -text
+snapshots/initial/data/** -text
+data/sanity.jsonl -text
+
+# Preserve the current real-model baseline snapshot across Windows and Mac.
+logs/baseline_dev_2026-11-04.jsonl -text

@@ -1,0 +1,27 @@
+Checks executed at 2026-11-03T17:18:16.157390+00:00
+All HTTP adapter tests use mocked responses. No real model inference was run.
+
+COMMAND: python3 -m unittest -v test_harness.py
+Wrote 16 records to /var/folders/hx/bk3bg0kd50n31czzvw1hkh4m0000gn/T/tmpp2e44h21/run; research ASR is not computed.
+PASS: hashes, 16 unique records, release gate, fail-closed behavior, and fixture outcomes verified.
+PASS: 8 parser cases (2 valid, 6 invalid). Run mock + verify for end-to-end checks.
+
+test_input_validation (test_harness.HarnessTests.test_input_validation) ... ok
+test_live_detector_failure_blocks_target (test_harness.HarnessTests.test_live_detector_failure_blocks_target) ... ok
+test_live_target_failure_not_scored_as_success (test_harness.HarnessTests.test_live_target_failure_not_scored_as_success) ... ok
+test_matrix_gating_and_integrity (test_harness.HarnessTests.test_matrix_gating_and_integrity) ... ok
+test_ollama_request_response_contract (test_harness.HarnessTests.test_ollama_request_response_contract) ... ok
+test_parser (test_harness.HarnessTests.test_parser) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.015s
+
+OK
+
+EXIT CODE: 0
+
+COMMAND: python3 harness.py verify --out runs/fallback_sanity
+PASS: hashes, 16 unique records, release gate, fail-closed behavior, and fixture outcomes verified.
+
+
+EXIT CODE: 0
