@@ -19,3 +19,11 @@ jobs:
         run: python scripts/check_repository.py
       - name: Run original archived harness tests without models
         run: python -m unittest discover -s snapshots/initial -p test_harness.py -v
+      - name: Run Pdirect gate and evaluation accounting tests without models
+        run: python -m unittest discover -s defenses/pdirect -p "test_*.py" -v
+      - name: Verify frozen Pdirect evaluation evidence without models
+        run: python defenses/pdirect/verify_evaluation.py experiments/pdirect/2026-11-04_frozen_evaluation_001
+      - name: Verify final Pdirect v2.1 evaluation and v1 replay
+        run: |
+          python defenses/pdirect/verify_evaluation.py experiments/pdirect/2026-11-04_v2_1_frozen_evaluation_001
+          python defenses/pdirect/verify_evaluation.py experiments/pdirect/2026-11-04_v1_replay_on_v2_001

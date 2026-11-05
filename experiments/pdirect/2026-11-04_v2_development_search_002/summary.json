@@ -1,0 +1,26 @@
+{
+  "v2_policy_clarified": {
+    "false_negative": 0,
+    "false_positive": 3,
+    "detector_error": 0,
+    "correct": 79,
+    "score": 3,
+    "n": 82
+  },
+  "v2_policy_compact": {
+    "false_negative": 0,
+    "false_positive": 3,
+    "detector_error": 0,
+    "correct": 79,
+    "score": 3,
+    "n": 82
+  },
+  "v2_action_summary": {
+    "false_negative": 0,
+    "false_positive": 5,
+    "detector_error": 0,
+    "correct": 77,
+    "score": 5,
+    "n": 82
+  }
+}
