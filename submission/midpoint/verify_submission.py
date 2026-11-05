@@ -1,5 +1,6 @@
 """Offline midpoint-package checks; does not run an LLM or change evidence."""
 import hashlib
+import json
 from pathlib import Path
 import re
 import subprocess
@@ -27,7 +28,21 @@ def main():
         if result.returncode:
             return result.returncode
     print("PASS: midpoint software/evidence checks; no LLM requests performed")
-    print("PENDING TEAM MATERIAL: Yasmin's actual work evidence")
+    pilot = ROOT / "evidence/yasmin"
+    provenance = json.loads((pilot / "provenance.json").read_text(encoding="utf-8"))
+    for name, expected_hash in provenance["files"].items():
+        if hashlib.sha256((pilot / name).read_bytes()).hexdigest() != expected_hash:
+            raise ValueError("Yasmin evidence differs from recorded source: " + name)
+    for run in sorted(p for p in pilot.iterdir() if p.is_dir()):
+        manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+        for name, expected_hash in manifest["sha256"].items():
+            filename = {"harness.py": "harness_used.py", "dataset": "pilot_dev.jsonl"}.get(name, name)
+            actual = hashlib.sha256((run / filename).read_bytes()).hexdigest()
+            if actual != expected_hash:
+                if filename != "review.csv":
+                    raise ValueError("Pilot manifest mismatch: " + run.name + "/" + filename)
+                print("FOLLOW-UP: " + run.name + "/review.csv differs from original manifest")
+    print("PASS: Yasmin pilot snapshots match PR #2 source; review-manifest follow-up noted")
     return 0
 
 

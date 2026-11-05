@@ -1,0 +1,21 @@
+{
+  "source_commit": "ce707a6ec3293090b7bb0352f9a0ddea5b737d9a",
+  "pull_request": "https://github.com/samdkaushik/selfdefend-ece424/pull/2",
+  "files": {
+    "contribution.md": "1a2b1955052ee5c5549e6e96dce6f8ffb6f19e533af293caa8e66221b1abcff2",
+    "2026-11-05_yasmin_pilot_002/trace.jsonl": "8b546df7d079d69939b644733a3c9e22765616c407c13ec0e79e237b8a344c0f",
+    "2026-11-05_yasmin_pilot_002/review.csv": "23b5655ca8eb2307456d9677f52fd75f9c5b5d712b5227b834feac20edf8f857",
+    "2026-11-05_yasmin_pilot_002/harness_used.py": "cf44f514fa79a0ac2ee7cefb4aa9b054fd3cec9e3c3daa8f5aa164baebd05ad8",
+    "2026-11-05_yasmin_pilot_002/pilot_dev.jsonl": "6651e0ceafa535d20b96a192616668e95ecc5f2e42fd64a3c911558a544c3d78",
+    "2026-11-05_yasmin_pilot_002/manifest.json": "45ad07a358f11c78e6f1f4dbe0b1c51755ec75b3a70a2c5573389afe8bc99a9a",
+    "2026-11-05_yasmin_pilot_002/summary.json": "b16601f8f934cd72c0aef61854bd914eaa04fb11f12767852ab5a3194eeb5091",
+    "2026-11-05_yasmin_pilot_002/README.md": "9f90ed37b4ee341c4ed1be27bdcbe624b459cf6d95262ecfd037635478dbc079",
+    "2026-11-04_yasmin_pilot_001/trace.jsonl": "0e448786246558eac76525cc464f75b5873f78d6cfd316247ff2a851a7b2f8a4",
+    "2026-11-04_yasmin_pilot_001/review.csv": "23b5655ca8eb2307456d9677f52fd75f9c5b5d712b5227b834feac20edf8f857",
+    "2026-11-04_yasmin_pilot_001/harness_used.py": "cf44f514fa79a0ac2ee7cefb4aa9b054fd3cec9e3c3daa8f5aa164baebd05ad8",
+    "2026-11-04_yasmin_pilot_001/pilot_dev.jsonl": "6651e0ceafa535d20b96a192616668e95ecc5f2e42fd64a3c911558a544c3d78",
+    "2026-11-04_yasmin_pilot_001/manifest.json": "29f929329394964afd557f4b3b938d1fa9ca34edb304cd8ada89e48ea341d02f",
+    "2026-11-04_yasmin_pilot_001/summary.json": "b16601f8f934cd72c0aef61854bd914eaa04fb11f12767852ab5a3194eeb5091",
+    "2026-11-04_yasmin_pilot_001/README.md": "740f88ebb165a04a0a96b6367176602ef75592cdd1883d3b9f4f7cb253ffa959"
+  }
+}
