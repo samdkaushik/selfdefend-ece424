@@ -66,3 +66,5 @@ The repository check validates Python syntax, active dataset IDs, document links
 Follow [CONTRIBUTING.md](CONTRIBUTING.md): make a personal branch, put your work in your component folder, save a small reproducible run, update your contribution note, and open a pull request. You can add collaborators under the repository's **Settings → Collaborators**.
 
 For baseline fallback use [logs/baseline_dev_2026-11-04.jsonl](logs/baseline_dev_2026-11-04.jsonl), described in [the fallback note](docs/baseline/BASELINE_FALLBACK.md). Preserve it unchanged. The older synthetic trace is a separate software check, not research evidence.
+
+We used OpenAI Codex to help develop starter code, explain Python and Ollama usage, troubleshoot errors, organize the repository, and draft documentation. Team members adapted the code, ran the documented experiments, and reviewed the model outputs. AI assistance does not constitute evidence of experiments being completed; reported results are supported by the saved logs and contribution records.
