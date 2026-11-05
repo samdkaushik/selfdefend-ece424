@@ -1,4 +1,0 @@
-{"sequence": 1, "case_id": "v2-eval-benign-06", "config": "pdirect", "repeat": 1, "outcome": "unresolved", "reviewer": null, "notes": ""}
-{"sequence": 2, "case_id": "v2-eval-benign-06", "config": "target_only", "repeat": 1, "outcome": "unresolved", "reviewer": null, "notes": ""}
-{"sequence": 3, "case_id": "v2-eval-attack-13", "config": "pdirect", "repeat": 1, "outcome": "unresolved", "reviewer": null, "notes": ""}
-{"sequence": 4, "case_id": "v2-eval-attack-13", "config": "target_only", "repeat": 1, "outcome": "unresolved", "reviewer": null, "notes": ""}

@@ -4,16 +4,12 @@ A team study of whether a smaller shadow language model can preserve the benefit
 
 **Start here:** [team roles](docs/TEAM_ROLES.md) · [contribute](CONTRIBUTING.md) · [experiment protocol](docs/EXPERIMENT_PROTOCOL.md) · [baseline results](docs/baseline/BASELINE_REVIEW.md)
 
-**Midpoint submission:** [self-contained package and single entry document](submission/midpoint/README.md).
-It gathers runnable code, selected evidence, sanity results, protocol, contribution
-summaries, and the fallback in one folder. Yasmin's actual work evidence is pending.
-
 ## Project status
 
 | Component | Owner | Current status | Where to go |
 | --- | --- | --- | --- |
 | Target-only baseline | Samarth | Working local-model harness; four-case development snapshot saved | [harness.py](harness.py), [instructions](docs/baseline/BASELINE_INSTRUCTIONS.md) |
-| Direct-content shadow | Sharon | V2.1: all 24 fresh attack cases blocked, 22/24 benign cases allowed; v1 comparison and limits documented | [Pdirect handoff](defenses/pdirect/HANDOFF.md) |
+| Direct-content shadow | Sharon | Implementation and results to be contributed | [Pdirect workspace](defenses/pdirect/README.md) |
 | Intent shadow | Yasmin | Implementation and results to be contributed | [Pintent workspace](defenses/pintent/README.md) |
 | Smaller-shadow comparison | Yasmin | Comparison and results to be contributed | [lightweight workspace](defenses/lightweight/README.md) |
 
@@ -53,13 +49,9 @@ Proposed models: target/standard shadow `qwen2.5:1.5b`; smaller shadow `qwen2.5:
 ```sh
 python3 scripts/check_repository.py
 python3 -m unittest discover -s snapshots/initial -p test_harness.py -v
-python3 -m unittest discover -s defenses/pdirect -p "test_*.py" -v
-python3 defenses/pdirect/verify_evaluation.py experiments/pdirect/2026-11-04_frozen_evaluation_001
-python3 defenses/pdirect/verify_evaluation.py experiments/pdirect/2026-11-04_v2_1_frozen_evaluation_001
-python3 defenses/pdirect/verify_evaluation.py experiments/pdirect/2026-11-04_v1_replay_on_v2_001
 ```
 
-The repository check validates Python syntax, active dataset IDs, document links, the real baseline snapshot hash, and the original synthetic snapshot hashes. The six archived tests exercise the original assisted harness, not the current target-only implementation. Pdirect tests exercise gating and evaluation accounting; its evidence verifier audits saved pairs and hashes. These commands do not run an LLM. GitHub Actions runs these checks on Windows and Linux after publication.
+The repository check validates Python syntax, active dataset IDs, document links, the real baseline snapshot hash, and the original synthetic snapshot hashes. The six archived tests exercise the original assisted harness, not the current target-only implementation. Neither command runs an LLM. GitHub Actions runs these checks on Windows and Linux after publication.
 
 ## Contribute and submit
 
