@@ -143,3 +143,11 @@ and self-contained midpoint package in a fresh clone using class account
 `skm204-crypto`. The user explicitly requested direct integration into `main`
 instead of a PR. The original baseline and Yasmin's pending components are
 preserved; no Pintent or lightweight implementation is claimed.
+
+## Review branch and contribution workflow
+
+The user subsequently requested the repository's PR workflow. Restored `main`
+to its original file contents through a revert commit, preserving history, and
+placed this contribution on `sharon/pdirect-midpoint` for review. The contribution
+includes code, experiment evidence, the midpoint package, and this assistance
+record. No Pintent/lightweight completion or Yasmin work is claimed.

@@ -81,7 +81,8 @@ The selected midpoint materials are collected in the [submission folder](../../s
 
 The experiments were produced in a ZIP workspace; their manifests retain those
 original paths and source hashes. Integration uses a fresh clone and the class
-account `skm204-crypto`. At the user's explicit request, this contribution is
-being pushed directly to `main`; baseline and teammate implementations are preserved.
+account `skm204-crypto`. The contribution is on `sharon/pdirect-midpoint`
+for pull-request review, following the repository contribution workflow.
+Main retains the owner's original files until this PR is reviewed and merged.
 The owner must review the implementation/results and confirm their own course
 attribution before submitting their work.
