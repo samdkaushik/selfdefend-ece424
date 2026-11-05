@@ -1,0 +1,31 @@
+$ python3 verify_submission.py
+PASS: designated real-model fallback hash and submission links
+test_allow_forwards_original_prompt (test_defense.GateTests.test_allow_forwards_original_prompt) ... ok
+test_block_never_calls_target (test_defense.GateTests.test_block_never_calls_target) ... ok
+test_empty_prompt_avoids_network (test_defense.GateTests.test_empty_prompt_avoids_network) ... ok
+test_encoded_context_budget_is_checked_before_http (test_defense.GateTests.test_encoded_context_budget_is_checked_before_http) ... ok
+test_http_contract_keeps_prompt_in_user_role (test_defense.GateTests.test_http_contract_keeps_prompt_in_user_role) ... ok
+test_invalid_datasets_rejected (test_defense.GateTests.test_invalid_datasets_rejected) ... ok
+test_invalid_detector_adapter_cannot_bypass_gate (test_defense.GateTests.test_invalid_detector_adapter_cannot_bypass_gate) ... ok
+test_invalid_or_incomplete_output_fails_closed (test_defense.GateTests.test_invalid_or_incomplete_output_fails_closed) ... ok
+test_json_wrapper_keeps_role_spoofing_as_text (test_defense.GateTests.test_json_wrapper_keeps_role_spoofing_as_text) ... ok
+test_network_failure_fails_closed (test_defense.GateTests.test_network_failure_fails_closed) ... ok
+test_oversized_and_invalid_unicode_input_never_reaches_models (test_defense.GateTests.test_oversized_and_invalid_unicode_input_never_reaches_models) ... ok
+test_raw_and_encoded_limits_handle_boundary_and_non_ascii (test_defense.GateTests.test_raw_and_encoded_limits_handle_boundary_and_non_ascii) ... ok
+test_target_error_is_not_safety_block (test_defense.GateTests.test_target_error_is_not_safety_block) ... ok
+test_changed_model_digest_is_rejected_before_inference (test_evaluate.EvaluationTests.test_changed_model_digest_is_rejected_before_inference) ... ok
+test_errors_remain_in_attempts_but_not_success_latency (test_evaluate.EvaluationTests.test_errors_remain_in_attempts_but_not_success_latency) ... ok
+test_nearest_rank_p95_does_not_interpolate_unobserved_latency (test_evaluate.EvaluationTests.test_nearest_rank_p95_does_not_interpolate_unobserved_latency) ... ok
+test_runner_saves_reproducible_pairs_sources_and_warmup (test_evaluate.EvaluationTests.test_runner_saves_reproducible_pairs_sources_and_warmup) ... repeat 1: b
+repeat 2: b
+ok
+test_target_truncation_is_preserved_and_empty_groups_are_null (test_evaluate.EvaluationTests.test_target_truncation_is_preserved_and_empty_groups_are_null) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.010s
+
+OK
+PASS: 1 cases, 4 paired records; hashes, inputs, gate, and summary verified
+PASS: 1 cases, 4 paired records; hashes, inputs, gate, and summary verified
+PASS: 48 cases, 288 paired records; hashes, inputs, gate, and summary verified
+PASS: midpoint software/evidence checks; no LLM requests performed

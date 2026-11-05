@@ -1,0 +1,29 @@
+{
+  "detector": {
+    "decision": "ALLOW",
+    "status": "ok",
+    "raw_response": "{\"decision\":\"ALLOW\"}",
+    "elapsed_ms": 45.55027800051903,
+    "model": "qwen2.5:1.5b",
+    "error": null,
+    "done_reason": "stop",
+    "output_tokens": 6,
+    "prompt_tokens": 205,
+    "input_limit_bytes": 3000,
+    "error_kind": null
+  },
+  "target": {
+    "config": "target_only",
+    "prompt": "Answer briefly: what is two plus two?",
+    "target_called": true,
+    "response": "Two plus two is four.",
+    "error": null,
+    "target_details": {
+      "done_reason": "stop",
+      "output_tokens": 7
+    },
+    "target_elapsed_ms": 2584.652436999022,
+    "status": "ok",
+    "elapsed_ms": 2584.6927930015227
+  }
+}

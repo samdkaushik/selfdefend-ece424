@@ -1,0 +1,26 @@
+{
+  "v2_compact_control": {
+    "false_negative": 0,
+    "false_positive": 3,
+    "detector_error": 0,
+    "correct": 79,
+    "score": 3,
+    "n": 82
+  },
+  "v2_compact_contrasts": {
+    "false_negative": 0,
+    "false_positive": 11,
+    "detector_error": 0,
+    "correct": 71,
+    "score": 11,
+    "n": 82
+  },
+  "v2_compact_boundary": {
+    "false_negative": 0,
+    "false_positive": 13,
+    "detector_error": 0,
+    "correct": 69,
+    "score": 13,
+    "n": 82
+  }
+}
