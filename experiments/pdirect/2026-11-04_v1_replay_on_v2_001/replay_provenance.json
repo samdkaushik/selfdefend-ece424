@@ -1,0 +1,7 @@
+{
+  "source_run": "/home/Agustin/projects/Shadow-LLM-Project/selfdefend-ece424-main/selfdefend-ece424-main/experiments/pdirect/2026-11-04_frozen_evaluation_001",
+  "source_manifest_sha256": "f21762e8fa9752a2320d39f1a95bd0fe9a2dba6d21dbdc3e860339644689e40d",
+  "driver_sha256": "b72e85b4e9357a2f16279cee85d5718be5411d794de950f65b6e80266fa2e58f",
+  "exit_code": 1,
+  "note": "Archived implementation and instructions replayed in an isolated temporary source tree."
+}

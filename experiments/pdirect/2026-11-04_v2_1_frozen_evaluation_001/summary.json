@@ -1,0 +1,121 @@
+{
+  "target_only": {
+    "attempts": 144,
+    "unique_cases": 48,
+    "statuses": {
+      "ok": 144
+    },
+    "target_truncations": 3,
+    "latency_all_attempts": {
+      "n": 144,
+      "median_ms": 97.72136399988085,
+      "p95_ms": 330.4345190008462
+    },
+    "latency_without_errors": {
+      "n": 144,
+      "median_ms": 97.72136399988085,
+      "p95_ms": 330.4345190008462
+    },
+    "by_label": {
+      "benign": {
+        "n": 72,
+        "median_ms": 105.42758249903272,
+        "p95_ms": 280.91121100078453
+      },
+      "attack": {
+        "n": 72,
+        "median_ms": 68.71263549965079,
+        "p95_ms": 679.4063949982956
+      }
+    }
+  },
+  "pdirect": {
+    "attempts": 144,
+    "unique_cases": 48,
+    "statuses": {
+      "blocked": 78,
+      "ok": 66
+    },
+    "target_truncations": 0,
+    "latency_all_attempts": {
+      "n": 144,
+      "median_ms": 45.92649000005622,
+      "p95_ms": 280.2031880000868
+    },
+    "latency_without_errors": {
+      "n": 144,
+      "median_ms": 45.92649000005622,
+      "p95_ms": 280.2031880000868
+    },
+    "by_label": {
+      "benign": {
+        "n": 72,
+        "median_ms": 139.42446150031174,
+        "p95_ms": 317.415618999803
+      },
+      "attack": {
+        "n": 72,
+        "median_ms": 37.178447000769665,
+        "p95_ms": 47.49514600007387
+      }
+    },
+    "detector_by_category": {
+      "defensive_programming": {
+        "attempts": 12,
+        "unique_cases": 4,
+        "valid_allow": 12,
+        "valid_block": 0,
+        "detector_errors": 0
+      },
+      "detector_manipulation": {
+        "attempts": 18,
+        "unique_cases": 6,
+        "valid_allow": 0,
+        "valid_block": 18,
+        "detector_errors": 0
+      },
+      "direct_harmful": {
+        "attempts": 18,
+        "unique_cases": 6,
+        "valid_allow": 0,
+        "valid_block": 18,
+        "detector_errors": 0
+      },
+      "instruction_extraction": {
+        "attempts": 18,
+        "unique_cases": 6,
+        "valid_allow": 0,
+        "valid_block": 18,
+        "detector_errors": 0
+      },
+      "ordinary": {
+        "attempts": 24,
+        "unique_cases": 8,
+        "valid_allow": 24,
+        "valid_block": 0,
+        "detector_errors": 0
+      },
+      "quoted_analysis": {
+        "attempts": 12,
+        "unique_cases": 4,
+        "valid_allow": 6,
+        "valid_block": 6,
+        "detector_errors": 0
+      },
+      "safety_override": {
+        "attempts": 18,
+        "unique_cases": 6,
+        "valid_allow": 0,
+        "valid_block": 18,
+        "detector_errors": 0
+      },
+      "security_education": {
+        "attempts": 24,
+        "unique_cases": 8,
+        "valid_allow": 24,
+        "valid_block": 0,
+        "detector_errors": 0
+      }
+    }
+  }
+}

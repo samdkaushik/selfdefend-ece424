@@ -8,6 +8,11 @@
 
 Read [CONTRIBUTING.md](../CONTRIBUTING.md) before editing. Use component folders to reduce overlapping edits. Integration changes to `harness.py` and shared prompts should be agreed in a pull request.
 
-Current evidence: Samarth's recorded baseline includes four real-model development cases. Other member implementation/results have not been supplied. Planned ownership must not be presented as completed work.
+Current evidence: Samarth's recorded baseline includes four real-model development
+cases. The assisted Pdirect v2.1 implementation and a fresh 48-case paired comparison
+are available in its [handoff](../defenses/pdirect/HANDOFF.md); prior detector misses,
+remaining false positives, and pending human adjudication are documented. Pintent and the
+smaller-model comparison remain pending. Planned ownership must not be presented
+as completed work.
 
 All members contribute their own dated evidence and review the combined midpoint report. Samarth assembles the final package; Sharon checks the architecture/sanity explanation; Yasmin checks the contribution plan and experimental protocol. These assembly tasks do not replace individual technical work.

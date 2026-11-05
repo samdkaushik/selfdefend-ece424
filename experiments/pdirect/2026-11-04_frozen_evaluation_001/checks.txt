@@ -1,0 +1,46 @@
+$ /usr/bin/python3 -m unittest discover -s defenses/pdirect -p test_*.py -v
+repeat 1: b
+repeat 2: b
+PASS: 1 cases, 4 paired records; hashes, inputs, gate, and summary verified
+test_allow_forwards_original_prompt (test_defense.GateTests.test_allow_forwards_original_prompt) ... ok
+test_block_never_calls_target (test_defense.GateTests.test_block_never_calls_target) ... ok
+test_empty_prompt_avoids_network (test_defense.GateTests.test_empty_prompt_avoids_network) ... ok
+test_http_contract_keeps_prompt_in_user_role (test_defense.GateTests.test_http_contract_keeps_prompt_in_user_role) ... ok
+test_invalid_datasets_rejected (test_defense.GateTests.test_invalid_datasets_rejected) ... ok
+test_invalid_or_incomplete_output_fails_closed (test_defense.GateTests.test_invalid_or_incomplete_output_fails_closed) ... ok
+test_network_failure_fails_closed (test_defense.GateTests.test_network_failure_fails_closed) ... ok
+test_target_error_is_not_safety_block (test_defense.GateTests.test_target_error_is_not_safety_block) ... ok
+test_errors_remain_in_attempts_but_not_success_latency (test_evaluate.EvaluationTests.test_errors_remain_in_attempts_but_not_success_latency) ... ok
+test_nearest_rank_p95_does_not_interpolate_unobserved_latency (test_evaluate.EvaluationTests.test_nearest_rank_p95_does_not_interpolate_unobserved_latency) ... ok
+test_runner_saves_reproducible_pairs_sources_and_warmup (test_evaluate.EvaluationTests.test_runner_saves_reproducible_pairs_sources_and_warmup) ... ok
+test_target_truncation_is_preserved_and_empty_groups_are_null (test_evaluate.EvaluationTests.test_target_truncation_is_preserved_and_empty_groups_are_null) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.006s
+
+OK
+
+$ /usr/bin/python3 scripts/check_repository.py
+PASS: hashes, 16 unique records, release gate, fail-closed behavior, and fixture outcomes verified.
+PASS: 12 Python files, 4 active cases, navigation links, and real snapshot integrity.
+No model requests or research-metric calculations were performed.
+
+$ /usr/bin/python3 defenses/pdirect/verify_evaluation.py experiments/pdirect/2026-11-04_frozen_evaluation_001
+PASS: 24 cases, 144 paired records; hashes, inputs, gate, and summary verified
+
+$ /usr/bin/python3 -m unittest discover -s snapshots/initial -p test_harness.py -v
+Wrote 16 records to /tmp/tmp_1wz43ye/run; research ASR is not computed.
+PASS: hashes, 16 unique records, release gate, fail-closed behavior, and fixture outcomes verified.
+PASS: 8 parser cases (2 valid, 6 invalid). Run mock + verify for end-to-end checks.
+test_input_validation (test_harness.HarnessTests.test_input_validation) ... ok
+test_live_detector_failure_blocks_target (test_harness.HarnessTests.test_live_detector_failure_blocks_target) ... ok
+test_live_target_failure_not_scored_as_success (test_harness.HarnessTests.test_live_target_failure_not_scored_as_success) ... ok
+test_matrix_gating_and_integrity (test_harness.HarnessTests.test_matrix_gating_and_integrity) ... ok
+test_ollama_request_response_contract (test_harness.HarnessTests.test_ollama_request_response_contract) ... ok
+test_parser (test_harness.HarnessTests.test_parser) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.006s
+
+OK
+

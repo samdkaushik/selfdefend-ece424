@@ -4,7 +4,7 @@
 
 Compare a smaller shadow with a standard shadow while holding target, detection strategy, inputs, and generation settings fixed. Compare direct and intent strategies using the same standard shadow. Use free local models or another approved free service; disclose any change in access, model, or version.
 
-The current target-only baseline is runnable. Teammates' defense workspaces are pending. The current project uses a simplified sequential gate: detector first, then target on ALLOW. This differs from SelfDefend's concurrent generation/release checkpoint. Custom detector instructions and small off-the-shelf models also differ from the paper; do not claim reproduction of its reported results.
+The current target-only baseline is runnable. Pdirect v2.1 and its frozen diagnostic comparison are available in its [handoff](../defenses/pdirect/HANDOFF.md); other defense workspaces remain pending. The current project uses a simplified sequential gate: detector first, then target on ALLOW. This differs from SelfDefend's concurrent generation/release checkpoint. Custom detector instructions and small off-the-shelf models also differ from the paper; do not claim reproduction of its reported results.
 
 ## Initial shared choices
 

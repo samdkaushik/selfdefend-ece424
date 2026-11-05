@@ -1,6 +1,9 @@
 # Shadow-defense workspaces
 
-Pdirect is owned by Sharon; Pintent and the smaller-shadow comparison by Yasmin. These directories are contribution locations, not completed implementations.
+Pdirect is owned by Sharon; its sequential gate and frozen diagnostic evaluation
+are available in the [handoff](pdirect/HANDOFF.md). Independent benchmarking and
+human adjudication remain pending. Pintent and the smaller-shadow comparison, owned by Yasmin,
+remain contribution workspaces.
 
 Recommended integration contract to agree before merging: a detector accepts the prompt and configured model and returns a structured decision (`ALLOW` or `BLOCK`), raw response, elapsed time, model, and an error field. Invalid/failed detector output should fail closed while retaining a distinguishable error status. Dataset labels must not be sent to the detector.
 
