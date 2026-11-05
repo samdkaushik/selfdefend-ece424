@@ -22,13 +22,10 @@ ok
 test_target_truncation_is_preserved_and_empty_groups_are_null (test_evaluate.EvaluationTests.test_target_truncation_is_preserved_and_empty_groups_are_null) ... ok
 
 ----------------------------------------------------------------------
-Ran 18 tests in 0.008s
+Ran 18 tests in 0.010s
 
 OK
 PASS: 1 cases, 4 paired records; hashes, inputs, gate, and summary verified
 PASS: 1 cases, 4 paired records; hashes, inputs, gate, and summary verified
 PASS: 48 cases, 288 paired records; hashes, inputs, gate, and summary verified
 PASS: midpoint software/evidence checks; no LLM requests performed
-FOLLOW-UP: 2026-11-04_yasmin_pilot_001/review.csv differs from original manifest
-FOLLOW-UP: 2026-11-05_yasmin_pilot_002/review.csv differs from original manifest
-PASS: Yasmin pilot snapshots match PR #2 source; review-manifest follow-up noted

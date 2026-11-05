@@ -6,8 +6,7 @@ A team study of whether a smaller shadow language model can preserve the benefit
 
 **Midpoint submission:** [self-contained package and single entry document](submission/midpoint/README.md).
 It gathers runnable code, selected evidence, sanity results, protocol, contribution
-summaries, and the fallback in one folder. Yasmin's pilot evidence is included;
-implementation and review-manifest follow-up remain pending.
+summary, and the fallback in one folder. This package covers the Pdirect contribution.
 
 ## Project status
 
@@ -15,8 +14,8 @@ implementation and review-manifest follow-up remain pending.
 | --- | --- | --- | --- |
 | Target-only baseline | Samarth | Working local-model harness; four-case development snapshot saved | [harness.py](harness.py), [instructions](docs/baseline/BASELINE_INSTRUCTIONS.md) |
 | Direct-content shadow | Sharon | V2.1: all 24 fresh attack cases blocked, 22/24 benign cases allowed; v1 comparison and limits documented | [Pdirect handoff](defenses/pdirect/HANDOFF.md) |
-| Intent shadow | Yasmin | Two setup pilots in PR #2; repo-native detector pending | [Pilot evidence](submission/midpoint/evidence/yasmin/README.md) |
-| Smaller-shadow comparison | Yasmin | Pilot results recorded; shared-input comparison pending | [Pilot evidence](submission/midpoint/evidence/yasmin/README.md) |
+| Intent shadow | Yasmin | Implementation and results to be contributed | [Pintent workspace](defenses/pintent/README.md) |
+| Smaller-shadow comparison | Yasmin | Comparison and results to be contributed | [lightweight workspace](defenses/lightweight/README.md) |
 
 The baseline snapshot contains two benign and two direct harmful requests. Qwen complied with both deceptive requests under preliminary review (2/2 in this tiny development sample). This is not a representative benchmark or demonstrated jailbreak bypass. A transport status of `ok` does not judge safety, correctness, or usefulness.
 

@@ -1,10 +1,10 @@
-# SelfDefend — midpoint submission
+# SelfDefend — Pdirect midpoint submission
 
-Samarth Kaushik, Sharon Melendez, Yasmin Shahlamedina — ECE 424
+Sharon Melendez — ECE 424
 
 This folder contains the runnable code, selected evidence, protocol, contribution
-summary, and fallback. Run commands from this directory. Evidence from all three
-team members is included; Yasmin's detector implementations remain in progress.
+summary, and fallback for the Pdirect contribution. Run commands from this
+directory. Other team contributions are maintained in their own submissions.
 
 ## Baseline and running instructions
 
@@ -91,28 +91,24 @@ protection. Allowed target answers can still have quality problems.
 Beyond the target-only baseline, compare direct-content versus intent detection
 and standard versus smaller shadows while holding target and inputs fixed.
 Pdirect implementation, attack/benign tests, and latency measurements are complete
-for this midpoint. Pintent and smaller-shadow setup pilots are recorded; their
-repo-native implementations and shared-input comparisons remain pending.
+for this midpoint. This package reports Pdirect only; other configurations are
+covered by their own contributions.
 
 Next: integrate those components, confirm response labels, and compare all four
 configurations on approximately 100 attack and 100 benign prompts. The current
 sequential gate is a simplified setup, not the paper's concurrent release checkpoint.
 
-## Individual work evidence
+## Contribution evidence
 
-| Member | Work so far | Evidence | Remaining work |
-| --- | --- | --- | --- |
-| Samarth Kaushik | Target harness, Ollama integration, dataset loop, response/error/timing logs, real-model baseline | [Harness](harness.py), [inputs](data/baseline_dev.jsonl), [baseline trace](logs/baseline_dev_2026-11-04.jsonl) | Broader baseline comparison; threat model/baseline section |
-| Sharon Melendez | Pdirect gate, detector prompt, structured verdicts, tests, attack/benign and latency experiments | [Code](defenses/pdirect/defense.py), [prompt](defenses/pdirect/detector_prompt.txt), recorded comparison above | Broader evaluation; architecture/Pdirect results section |
-| Yasmin Shahlamedina | Ollama/model setup, two four-prompt pilots across four configurations, and row-by-row labels | [Pilot evidence](evidence/yasmin/README.md), [work note](evidence/yasmin/contribution.md) | Repo-native detectors, same-input comparison, second review, and review-file manifest hashes |
+Sharon Melendez: Pdirect gate, detector instructions, structured verdicts,
+error handling, tests, attack/benign evaluation, latency measurements, and the
+midpoint package. Evidence is in [defense.py](defenses/pdirect/defense.py),
+[detector_prompt.txt](defenses/pdirect/detector_prompt.txt), and the recorded
+comparison linked above. Remaining work is broader evaluation, response-label
+confirmation, and the architecture/Pdirect results sections.
 
-Yasmin's files are copied from [PR #2](https://github.com/samdkaushik/selfdefend-ece424/pull/2),
-commit `ce707a6`, without merging that PR. Each pilot contains the same four
-configurations: Pintent blocked 2/2 attacks and allowed 1/2 benign prompts; the
-smaller direct shadow blocked 2/2 attacks and allowed 0/2 benign prompts. These
-inputs and Mac hardware differ from Pdirect's evaluation, so no direct performance
-comparison is claimed. Both review CSV hashes need updating in her manifests;
-original files and the [audit](evidence/yasmin/manifest_audit.json) are preserved.
+The target-only [harness](harness.py) and preserved baseline trace are Samarth's
+existing baseline, included to make this contribution runnable and checkable.
 
 ## Designated fallback
 

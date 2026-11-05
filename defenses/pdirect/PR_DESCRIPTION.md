@@ -19,5 +19,6 @@ Windows and Linux. Baseline and teammate implementations are unchanged.
 
 See [Sharon's note](../../contributions/sharon.md) and the
 [midpoint package](../../submission/midpoint/README.md). Preliminary answer labels
-need confirmation. Yasmin's pilot evidence is included. Broader evaluation, repo-native Pintent and
-smaller-shadow code, second review, and pilot review-file manifest updates remain pending.
+need confirmation. Remaining Pdirect work: confirm response-review labels, broaden the evaluation,
+and complete the architecture/results sections. Other contributions are documented
+in their own PRs.

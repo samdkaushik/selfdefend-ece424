@@ -23,6 +23,5 @@ python3 submission/midpoint/verify_submission.py
 ## Remaining work
 
 Confirm preliminary answer labels, integrate the other defense comparisons,
-and run a broader evaluation. Yasmin's pilot evidence is included in the midpoint
-package; repo-native Pintent/lightweight code remains pending.
+and run a broader evaluation. This handoff covers Pdirect only.
 Changes are on `sharon/pdirect-midpoint` for review in PR #1.
