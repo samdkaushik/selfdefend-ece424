@@ -24,7 +24,7 @@ Apple M1, 8 GB, Ollama 0.40.14. qwen2.5:1.5b (65ec06548149) as target and standa
 - Run 002 (2026-11-05T05:14:39Z) was after warm-up. Decisions matched run 001.
 
 ## Review
-review.csv: all 16 rows labeled by sy805 (blocked = 0 rule; benign answers over the 80-word limit labeled 1 and noted).
+review_labeled_sy805.csv: all 16 rows labeled by sy805 (blocked = 0 rule; benign answers over the 80-word limit labeled 1 and noted).
 Second reviewer: pending.
 
 ## Limitations
@@ -32,3 +32,5 @@ Four prompts. Different inputs from the experiments/pdirect runs, so not compara
 
 ## Assistance
 Harness and starter docs were generated with AI assistance. I ran the commands and labeled the rows myself.
+
+Note: review.csv is the unmodified template the harness wrote; its sha256 matches manifest.json. My labels are in review_labeled_sy805.csv.
