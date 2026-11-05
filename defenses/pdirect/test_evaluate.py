@@ -34,8 +34,13 @@ class EvaluationTests(unittest.TestCase):
             records = [json.loads(line) for line in (output / "trace.jsonl").read_text().splitlines()]
             self.assertEqual(len(records), 4)  # Warmup is separate from measured pairs.
             manifest = json.loads((output / "manifest.json").read_text())
+            self.assertTrue(all("\\" not in name for name in manifest["source_sha256"]))
             for name, digest in manifest["source_sha256"].items():
                 self.assertEqual(hashlib.sha256((output / "source" / name).read_bytes()).hexdigest(), digest)
+            verify_evaluation.verify(output)
+            manifest["source_sha256"] = {name.replace("/", "\\"): digest
+                                         for name, digest in manifest["source_sha256"].items()}
+            (output / "manifest.json").write_text(json.dumps(manifest), encoding="utf-8")
             verify_evaluation.verify(output)
             # A duplicated/missing pair must not pass an evidence audit.
             records[-1] = records[0]

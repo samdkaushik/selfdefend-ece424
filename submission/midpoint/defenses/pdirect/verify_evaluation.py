@@ -11,6 +11,10 @@ import evaluate
 
 def verify(folder):
     manifest = json.loads((folder / "manifest.json").read_text(encoding="utf-8"))
+    source_hashes = {name.replace("\\", "/"): digest
+                     for name, digest in manifest["source_sha256"].items()}
+    if len(source_hashes) != len(manifest["source_sha256"]):
+        raise ValueError("Ambiguous normalized source paths")
     data = (folder / "inputs.jsonl").read_bytes()
     if hashlib.sha256(data).hexdigest() != manifest["dataset_sha256"]:
         raise ValueError("Dataset hash mismatch")
@@ -19,10 +23,10 @@ def verify(folder):
     prompt_hash = hashlib.sha256((folder / "detector_prompt.txt").read_bytes()).hexdigest()
     if prompt_hash != frozen["prompt_sha256"]:
         raise ValueError("Saved prompt differs from freeze")
-    if prompt_hash != manifest["source_sha256"]["defenses/pdirect/detector_prompt.txt"]:
+    if prompt_hash != source_hashes["defenses/pdirect/detector_prompt.txt"]:
         raise ValueError("Manifest prompt hash mismatch")
     if frozen.get("detector_source_sha256"):
-        if frozen["detector_source_sha256"] != manifest["source_sha256"]["defenses/pdirect/defense.py"]:
+        if frozen["detector_source_sha256"] != source_hashes["defenses/pdirect/defense.py"]:
             raise ValueError("Detector source differs from frozen implementation")
         if frozen["detector_settings"] != manifest.get("detector_settings"):
             raise ValueError("Detector settings differ from freeze")
@@ -31,7 +35,7 @@ def verify(folder):
         matching = [m for m in models if isinstance(m, dict) and m.get("name") == frozen["model"]]
         if len(matching) != 1 or matching[0].get("digest") != frozen.get("model_digest"):
             raise ValueError("Recorded model digest differs from freeze")
-    for name, expected in manifest["source_sha256"].items():
+    for name, expected in source_hashes.items():
         saved = folder / "source" / name
         if hashlib.sha256(saved.read_bytes()).hexdigest() != expected:
             raise ValueError("Source hash mismatch: " + name)
