@@ -16,7 +16,7 @@ below is historical; no independent benchmark or human adjudication is claimed.
 
 ## Earlier v1 evidence
 
-Owner: Sharon Melendez. A setup probe, six assisted development runs, and a
+Owner: Sharon Melendez. A setup probe, six development runs, and a
 frozen 24-case paired comparison are available. The final instructions fix the
 original development miss but still miss two fresh extraction variants and block
 two benign security questions. Independent benchmarking and human adjudication

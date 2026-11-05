@@ -9,7 +9,7 @@ V1 blocked 21/24 attack cases, missed 2/24, and produced an invalid verdict on 1
 It allowed 17/24 benign cases, blocked 5/24, and produced invalid verdicts on 2/24.
 These decisions were consistent across repeats: nine protocol-error attempts,
 all withheld without target calls. The process exited 1 as designed for errors.
-No fresh assisted released-answer review is claimed for this replay.
+Released answers from this replay have not been reviewed.
 
 From the repository root:
 
