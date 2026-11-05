@@ -107,7 +107,7 @@ def main():
         "command": [sys.executable] + sys.argv, "repeats": args.repeats,
         "order_seed": 424, "machine_note": args.machine_note,
         "dataset_sha256": hashlib.sha256(data).hexdigest(),
-        "source_sha256": {str(p.relative_to(defense.ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
+        "source_sha256": {p.relative_to(defense.ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
                           for p in (Path(__file__), HERE / "defense.py", defense.ROOT / "harness.py", defense.PROMPT_PATH)},
         "runtime": runtime, "settings": defense.SETTINGS,
         "detector_settings": defense.DETECTOR_SETTINGS, "max_prompt_bytes": defense.MAX_PROMPT_BYTES,
