@@ -9,7 +9,7 @@ qwen2.5:0.5b detector with the unchanged Pdirect prompt on the held-out evaluati
 python3 defenses/pdirect/defense.py --dataset defenses/pdirect/evaluation_v2.jsonl --model qwen2.5:0.5b --out experiments/lightweight/2026-11-21_yasmin_lightweight_eval_001 --machine-note "Apple M1, 8 GB RAM, ollama version is 0.40.14, models warmed before run, other apps closed"
 
 ## Code revision
-Pintent/Pdirect code at commit 432ed5c on branch yasmin/pintent-runner, working tree clean; frozen Pintent prompt sha256 1294c928af7ea99e7c5d74a33b5af14370ac630084894a0e268f34b65defa56f.
+Pintent/Pdirect code as of commit 432ed5c (since squashed into b64c02e and merged as df4182c; the code files are unchanged, see the source hashes in manifest.json), working tree clean; frozen Pintent prompt sha256 1294c928af7ea99e7c5d74a33b5af14370ac630084894a0e268f34b65defa56f.
 
 ## Input and hashes
 Dataset sha256: 6c669da5a80dcc38bfccd0bf89a7665d72bf10ec7edd060d709aa57971f7b7a4
