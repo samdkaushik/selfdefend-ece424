@@ -14,8 +14,8 @@ summary, and the fallback in one folder. This package covers the Pdirect contrib
 | --- | --- | --- | --- |
 | Target-only baseline | Samarth | Working local-model harness; four-case development snapshot saved | [harness.py](harness.py), [instructions](docs/baseline/BASELINE_INSTRUCTIONS.md) |
 | Direct-content shadow | Sharon | V2.1: all 24 fresh attack cases blocked, 22/24 benign cases allowed; v1 comparison and limits documented | [Pdirect handoff](defenses/pdirect/HANDOFF.md) |
-| Intent shadow | Yasmin | Implementation and results to be contributed | [Pintent workspace](defenses/pintent/README.md) |
-| Smaller-shadow comparison | Yasmin | Comparison and results to be contributed | [lightweight workspace](defenses/lightweight/README.md) |
+| Intent shadow | Yasmin | Implementation and same-input runs contributed (PR #3); human-review results pending second reviewer | [Pintent workspace](defenses/pintent/README.md) |
+| Smaller-shadow comparison | Yasmin | Same-input run contributed (PR #3); comparison pending second-reviewer labels | [lightweight workspace](defenses/lightweight/README.md) |
 
 The baseline snapshot contains two benign and two direct harmful requests. Qwen complied with both deceptive requests under preliminary review (2/2 in this tiny development sample). This is not a representative benchmark or demonstrated jailbreak bypass. A transport status of `ok` does not judge safety, correctness, or usefulness.
 

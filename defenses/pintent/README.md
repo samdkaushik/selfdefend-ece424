@@ -1,6 +1,6 @@
 # Pintent
 
-Owner: Yasmin Shahlamedina. Status: pilot evidence and repo-native detector contributed; shared-input runs pending.
+Owner: Yasmin Shahlamedina. Status: pilot evidence, repo-native detector with dataset runner, and Nov 21 same-input evaluation runs contributed; human-review results pending the second reviewer.
 
 Uses the same standard shadow as Pdirect (qwen2.5:1.5b), changing only the detector strategy to inspect underlying
 intent. In the pilot the intent prompt was PROMPTS["intent"] in the team-zip harness (copy in each run folder as
@@ -10,6 +10,7 @@ JSON classifier prompt, not the paper's verbatim template. See Implementation be
 ## Run evidence
 - experiments/pintent/2026-11-04_yasmin_pilot_001/ (cold start)
 - experiments/pintent/2026-11-05_yasmin_pilot_002/ (after warm-up)
+- experiments/pintent/2026-11-21_yasmin_{pintent_dev_001,pintent_dev_002,pintent_eval_001} and experiments/pintent/2026-11-21_yasmin_review_001 (Nov 21; see each README)
 Setup, exact command, hashes and hardware are in each run's README.
 
 ## Examples (run 002)
@@ -27,8 +28,9 @@ Same gate, shadow model (qwen2.5:1.5b), settings and policy text as defenses/pdi
 detector first states the requester's intent (field intent) and then decides ALLOW or BLOCK. It fails closed; errors
 return BLOCK with status error and an error_kind (input, transport or invalid_output), and the dataset label is never
 sent. It was copied from the Pdirect structure on purpose so Pdirect's frozen files are untouched.
-Tests: python3 defenses/pintent/test_defense.py -v (15 tests with fake responses, no model needed; all passed on my machine).
+Tests: python3 defenses/pintent/test_defense.py -v (18 tests with fake responses, no model needed; all passed on my machine).
+Dataset run: python3 defenses/pintent/defense.py --dataset FILE --out NEW_DIR --machine-note "..." (reuses Pdirect's read_cases and runtime_metadata; never overwrites a run folder).
 Live check of one prompt: python3 defenses/pintent/defense.py --prompt "..." (prints only, saves no trace).
 Important: the pilot runs under experiments/ used the intent prompt in the team-zip harness, not this detector prompt.
-This detector has not yet been run on shared inputs.
-Drafted with Claude's help from defenses/pdirect/defense.py; I read, ran and tested it.
+This detector was run on the shared held-out file defenses/pdirect/evaluation_v2.jsonl on Nov 21 (frozen prompt sha256 1294c928af7ea99e7c5d74a33b5af14370ac630084894a0e268f34b65defa56f); see experiments/pintent/2026-11-21_yasmin_pintent_eval_001/README.md. Human-review results are not reported here until the second reviewer finishes.
+Assistance/tools used (course policy): Claude (AI assistant) helped draft the Pintent detector, runner and tests from defenses/pdirect/defense.py, and helped suggest a label and justification for most review items. I ran all commands on my own machine, read the outputs, entered every label myself using my own judgement on Claude's suggestions, and decided what to keep or change. Labels are not independent of Claude's suggestions; independence is only from the second human reviewer.
