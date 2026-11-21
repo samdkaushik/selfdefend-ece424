@@ -5,11 +5,14 @@ detector first states the request's underlying intent and then decides from it.
 Copied from the Pdirect structure on purpose so Pdirect's frozen files are untouched."""
 
 import argparse
+import hashlib
+import importlib.util
 import json
 import sys
 import time
 import urllib.error
 import urllib.request
+from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -139,14 +142,70 @@ def defend(prompt, model=SHADOW_MODEL):
     return record
 
 
+def _load_pdirect():
+    """Load Sharon's Pdirect module to reuse its case reader and runtime metadata."""
+    path = ROOT / "defenses" / "pdirect" / "defense.py"
+    spec = importlib.util.spec_from_file_location("pdirect_defense", path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
 def main():
-    """Quick live look at one detector verdict. Prints only; saves no trace."""
+    """Check one prompt (prints only) or run a dataset and save a complete run directory."""
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--prompt", required=True)
+    inputs = parser.add_mutually_exclusive_group(required=True)
+    inputs.add_argument("--dataset", type=Path)
+    inputs.add_argument("--prompt", help="Check one prompt; saves a trace only with --out")
+    parser.add_argument("--out", type=Path, help="New run directory; never overwritten")
     parser.add_argument("--model", default=SHADOW_MODEL)
+    parser.add_argument("--machine-note", default="Not supplied")
     args = parser.parse_args()
-    print(json.dumps(detect(args.prompt, args.model), indent=2, ensure_ascii=False))
-    return 0
+    if args.out is None:
+        if args.dataset is not None:
+            parser.error("--out is required with --dataset")
+        print(json.dumps(detect(args.prompt, args.model), indent=2, ensure_ascii=False))
+        return 0
+    pdirect = _load_pdirect()
+    if args.prompt is not None:
+        data = (json.dumps({"id": "interactive-001", "prompt": args.prompt}) + "\n").encode("utf-8")
+    else:
+        data = args.dataset.read_bytes()
+    cases = pdirect.read_cases(data)
+    args.out.mkdir(parents=True, exist_ok=False)
+    (args.out / "inputs.jsonl").write_bytes(data)
+    (args.out / "detector_prompt.txt").write_bytes(PROMPT_PATH.read_bytes())
+    sources = (Path(__file__).resolve(), PROMPT_PATH.resolve(), ROOT / "harness.py",
+               ROOT / "defenses" / "pdirect" / "defense.py")
+    manifest = {
+        "timestamp_utc": datetime.now(timezone.utc).isoformat(),
+        "command": [sys.executable] + sys.argv,
+        "config": "pintent",
+        "dataset_sha256": hashlib.sha256(data).hexdigest(),
+        "source_sha256": {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
+                          for p in sources},
+        "shadow_model": args.model, "target_model": harness.TARGET_MODEL,
+        "settings": SETTINGS, "timeout_seconds": 120,
+        "detector_settings": DETECTOR_SETTINGS, "verdict_schema": VERDICT_SCHEMA,
+        "max_prompt_bytes": MAX_PROMPT_BYTES,
+        "reused_from_pdirect": ["read_cases", "runtime_metadata"],
+        "machine_note": args.machine_note, "runtime": pdirect.runtime_metadata(),
+        "limitations": "Sequential gate; statuses are not safety or usefulness scores.",
+    }
+    (args.out / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    counts = {}
+    with (args.out / "trace.jsonl").open("x", encoding="utf-8") as output:
+        for case in cases:
+            record = defend(case["prompt"], args.model)
+            record.update(case_id=case["id"], label=case.get("label"),
+                          category=case.get("category"),
+                          timestamp_utc=datetime.now(timezone.utc).isoformat())
+            output.write(json.dumps(record, ensure_ascii=False) + "\n")
+            output.flush()
+            counts[record["status"]] = counts.get(record["status"], 0) + 1
+            print(f"{case['id']}: {record['status']} ({record['detector']['decision']})")
+    (args.out / "summary.json").write_text(json.dumps(counts, indent=2) + "\n", encoding="utf-8")
+    return 1 if counts.get("detector_error") or counts.get("target_error") else 0
 
 
 if __name__ == "__main__":
