@@ -9,7 +9,7 @@ Pintent development run with the frozen original detector prompt. Development da
 python3 defenses/pintent/defense.py --dataset defenses/pdirect/development_v2.jsonl --out experiments/pintent/2026-11-21_yasmin_pintent_dev_001 --machine-note "Apple M1, 8 GB RAM, ollama version is 0.40.14, models warmed before run, other apps closed"
 
 ## Code revision
-Pintent/Pdirect code at commit 432ed5c on branch yasmin/pintent-runner, working tree clean; frozen Pintent prompt sha256 1294c928af7ea99e7c5d74a33b5af14370ac630084894a0e268f34b65defa56f.
+Pintent/Pdirect code as of commit 432ed5c (since squashed into b64c02e and merged as df4182c; the code files are unchanged, see the source hashes in manifest.json), working tree clean; frozen Pintent prompt sha256 1294c928af7ea99e7c5d74a33b5af14370ac630084894a0e268f34b65defa56f.
 
 ## Input and hashes
 Dataset sha256: c56eb1777b04075217220cf0f151d6c534989523385a46b8fd56469545e72120

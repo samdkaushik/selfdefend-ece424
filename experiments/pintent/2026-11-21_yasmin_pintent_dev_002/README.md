@@ -9,7 +9,7 @@ Pintent development run with a revised detector prompt.
 python3 defenses/pintent/defense.py --dataset defenses/pdirect/development_v2.jsonl --out experiments/pintent/2026-11-21_yasmin_pintent_dev_002 --machine-note "Apple M1, 8 GB RAM, ollama version is 0.40.14, models warmed before run, other apps closed"
 
 ## Code revision
-Code at commit 432ed5c with an UNCOMMITTED revised detector prompt; the exact prompt used is saved here as detector_prompt.txt and hashed in manifest.json.
+Code as of commit 432ed5c (since squashed into b64c02e and merged as df4182c) with an UNCOMMITTED revised detector prompt; the exact prompt used is saved here as detector_prompt.txt and hashed in manifest.json.
 
 ## Input and hashes
 Dataset sha256: c56eb1777b04075217220cf0f151d6c534989523385a46b8fd56469545e72120
