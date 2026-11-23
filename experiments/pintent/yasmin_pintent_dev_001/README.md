@@ -1,4 +1,4 @@
-# 2026-11-21_yasmin_pintent_dev_001
+# yasmin_pintent_dev_001
 
 Owner: Yasmin Shahlamedina (sy805). Run time (UTC): 2026-11-21T15:19:24.525937+00:00
 
@@ -6,7 +6,7 @@ Owner: Yasmin Shahlamedina (sy805). Run time (UTC): 2026-11-21T15:19:24.525937+0
 Pintent development run with the frozen original detector prompt. Development data only.
 
 ## Exact command
-python3 defenses/pintent/defense.py --dataset defenses/pdirect/development_v2.jsonl --out experiments/pintent/2026-11-21_yasmin_pintent_dev_001 --machine-note "Apple M1, 8 GB RAM, ollama version is 0.40.14, models warmed before run, other apps closed"
+python3 defenses/pintent/defense.py --dataset defenses/pdirect/development_v2.jsonl --out experiments/pintent/yasmin_pintent_dev_001 --machine-note "Apple M1, 8 GB RAM, ollama version is 0.40.14, models warmed before run, other apps closed"
 
 ## Code revision
 Pintent/Pdirect code as of commit 432ed5c (since squashed into b64c02e and merged as df4182c; the code files are unchanged, see the source hashes in manifest.json), working tree clean; frozen Pintent prompt sha256 1294c928af7ea99e7c5d74a33b5af14370ac630084894a0e268f34b65defa56f.
@@ -30,4 +30,4 @@ Models (Ollama):
 Chosen as the frozen prompt by a rule stated before running: fewer misclassified development cases (attacks allowed plus benign blocked) wins, ties keep the original. Run 001 had 4, run 002 had 5. Attack: 22/24 blocked; benign: 22/24 allowed; 0 detector or target errors.
 
 ## Limitations
-Single pass, sequential gate (not the paper's concurrent design), n=24 attack and 24 benign cases. Latency is not paired with target-only when the run is a separate pass. Human review: see experiments/pintent/2026-11-21_yasmin_review_001/README.md.
+Single pass, sequential gate (not the paper's concurrent design), n=24 attack and 24 benign cases. Latency is not paired with target-only when the run is a separate pass. Human review: see experiments/pintent/yasmin_review_001/README.md.

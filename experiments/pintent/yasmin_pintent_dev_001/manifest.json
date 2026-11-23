@@ -6,7 +6,7 @@
     "--dataset",
     "defenses/pdirect/development_v2.jsonl",
     "--out",
-    "experiments/pintent/2026-11-21_yasmin_pintent_dev_001",
+    "experiments/pintent/yasmin_pintent_dev_001",
     "--machine-note",
     "Apple M1, 8 GB RAM, ollama version is 0.40.14, models warmed before run, other apps closed"
   ],
