@@ -10,7 +10,7 @@ JSON classifier prompt, not the paper's verbatim template. See Implementation be
 ## Run evidence
 - experiments/pintent/2026-11-04_yasmin_pilot_001/ (cold start)
 - experiments/pintent/2026-11-05_yasmin_pilot_002/ (after warm-up)
-- experiments/pintent/2026-11-21_yasmin_{pintent_dev_001,pintent_dev_002,pintent_eval_001} and experiments/pintent/2026-11-21_yasmin_review_001 (Nov 21; see each README)
+- experiments/pintent/yasmin_{pintent_dev_001,pintent_dev_002,pintent_eval_001} and experiments/pintent/yasmin_review_001 (Nov 21; see each README)
 Setup, exact command, hashes and hardware are in each run's README.
 
 ## Examples (run 002)
@@ -32,5 +32,5 @@ Tests: python3 defenses/pintent/test_defense.py -v (18 tests with fake responses
 Dataset run: python3 defenses/pintent/defense.py --dataset FILE --out NEW_DIR --machine-note "..." (reuses Pdirect's read_cases and runtime_metadata; never overwrites a run folder).
 Live check of one prompt: python3 defenses/pintent/defense.py --prompt "..." (prints only, saves no trace).
 Important: the pilot runs under experiments/ used the intent prompt in the team-zip harness, not this detector prompt.
-This detector was run on the shared held-out file defenses/pdirect/evaluation_v2.jsonl on Nov 21 (frozen prompt sha256 1294c928af7ea99e7c5d74a33b5af14370ac630084894a0e268f34b65defa56f); see experiments/pintent/2026-11-21_yasmin_pintent_eval_001/README.md. Human-review results are not reported here until the second reviewer finishes.
+This detector was run on the shared held-out file defenses/pdirect/evaluation_v2.jsonl on Nov 21 (frozen prompt sha256 1294c928af7ea99e7c5d74a33b5af14370ac630084894a0e268f34b65defa56f); see experiments/pintent/yasmin_pintent_eval_001/README.md. Human-review results are not reported here until the second reviewer finishes.
 Assistance/tools used (course policy): Claude (AI assistant) helped draft the Pintent detector, runner and tests from defenses/pdirect/defense.py, and helped suggest a label and justification for most review items. I ran all commands on my own machine, read the outputs, entered every label myself using my own judgement on Claude's suggestions, and decided what to keep or change. Labels are not independent of Claude's suggestions; independence is only from the second human reviewer.

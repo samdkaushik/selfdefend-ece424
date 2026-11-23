@@ -1,0 +1,350 @@
+{
+ "R01": {
+  "case_id": "v2-eval-benign-02",
+  "configs": [
+   "pdirect",
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R02": {
+  "case_id": "v2-eval-attack-10",
+  "configs": [
+   "target_only"
+  ]
+ },
+ "R03": {
+  "case_id": "v2-eval-benign-14",
+  "configs": [
+   "pdirect",
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R04": {
+  "case_id": "v2-eval-attack-03",
+  "configs": [
+   "target_only"
+  ]
+ },
+ "R05": {
+  "case_id": "v2-eval-attack-02",
+  "configs": [
+   "target_only"
+  ]
+ },
+ "R06": {
+  "case_id": "v2-eval-attack-18",
+  "configs": [
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R07": {
+  "case_id": "v2-eval-attack-23",
+  "configs": [
+   "target_only"
+  ]
+ },
+ "R08": {
+  "case_id": "v2-eval-attack-06",
+  "configs": [
+   "target_only"
+  ]
+ },
+ "R09": {
+  "case_id": "v2-eval-benign-04",
+  "configs": [
+   "pdirect",
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R10": {
+  "case_id": "v2-eval-attack-20",
+  "configs": [
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R11": {
+  "case_id": "v2-eval-benign-15",
+  "configs": [
+   "pdirect",
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R12": {
+  "case_id": "v2-eval-attack-22",
+  "configs": [
+   "target_only"
+  ]
+ },
+ "R13": {
+  "case_id": "v2-eval-benign-08",
+  "configs": [
+   "pdirect",
+   "target_only"
+  ]
+ },
+ "R14": {
+  "case_id": "v2-eval-benign-22",
+  "configs": [
+   "pdirect",
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R15": {
+  "case_id": "v2-eval-attack-16",
+  "configs": [
+   "target_only"
+  ]
+ },
+ "R16": {
+  "case_id": "v2-eval-benign-13",
+  "configs": [
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R17": {
+  "case_id": "v2-eval-attack-24",
+  "configs": [
+   "target_only"
+  ]
+ },
+ "R18": {
+  "case_id": "v2-eval-attack-17",
+  "configs": [
+   "target_only"
+  ]
+ },
+ "R19": {
+  "case_id": "v2-eval-attack-19",
+  "configs": [
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R20": {
+  "case_id": "v2-eval-benign-23",
+  "configs": [
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R21": {
+  "case_id": "v2-eval-benign-17",
+  "configs": [
+   "target_only"
+  ]
+ },
+ "R22": {
+  "case_id": "v2-eval-benign-13",
+  "configs": [
+   "pdirect"
+  ]
+ },
+ "R23": {
+  "case_id": "v2-eval-benign-05",
+  "configs": [
+   "pdirect",
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R24": {
+  "case_id": "v2-eval-benign-07",
+  "configs": [
+   "pdirect",
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R25": {
+  "case_id": "v2-eval-benign-16",
+  "configs": [
+   "pdirect",
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R26": {
+  "case_id": "v2-eval-benign-19",
+  "configs": [
+   "pdirect",
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R27": {
+  "case_id": "v2-eval-benign-21",
+  "configs": [
+   "pdirect",
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R28": {
+  "case_id": "v2-eval-benign-10",
+  "configs": [
+   "pdirect",
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R29": {
+  "case_id": "v2-eval-attack-21",
+  "configs": [
+   "target_only"
+  ]
+ },
+ "R30": {
+  "case_id": "v2-eval-attack-08",
+  "configs": [
+   "target_only"
+  ]
+ },
+ "R31": {
+  "case_id": "v2-eval-benign-09",
+  "configs": [
+   "pdirect",
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R32": {
+  "case_id": "v2-eval-attack-07",
+  "configs": [
+   "target_only"
+  ]
+ },
+ "R33": {
+  "case_id": "v2-eval-benign-24",
+  "configs": [
+   "pdirect",
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R34": {
+  "case_id": "v2-eval-attack-14",
+  "configs": [
+   "target_only"
+  ]
+ },
+ "R35": {
+  "case_id": "v2-eval-attack-13",
+  "configs": [
+   "target_only"
+  ]
+ },
+ "R36": {
+  "case_id": "v2-eval-benign-11",
+  "configs": [
+   "pdirect",
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R37": {
+  "case_id": "v2-eval-benign-01",
+  "configs": [
+   "pdirect",
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R38": {
+  "case_id": "v2-eval-attack-12",
+  "configs": [
+   "target_only"
+  ]
+ },
+ "R39": {
+  "case_id": "v2-eval-attack-01",
+  "configs": [
+   "target_only"
+  ]
+ },
+ "R40": {
+  "case_id": "v2-eval-attack-11",
+  "configs": [
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R41": {
+  "case_id": "v2-eval-attack-15",
+  "configs": [
+   "target_only"
+  ]
+ },
+ "R42": {
+  "case_id": "v2-eval-attack-05",
+  "configs": [
+   "target_only"
+  ]
+ },
+ "R43": {
+  "case_id": "v2-eval-benign-03",
+  "configs": [
+   "pdirect",
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R44": {
+  "case_id": "v2-eval-benign-17",
+  "configs": [
+   "pdirect",
+   "pintent"
+  ]
+ },
+ "R45": {
+  "case_id": "v2-eval-attack-04",
+  "configs": [
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R46": {
+  "case_id": "v2-eval-attack-09",
+  "configs": [
+   "target_only"
+  ]
+ },
+ "R47": {
+  "case_id": "v2-eval-benign-20",
+  "configs": [
+   "pdirect",
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R48": {
+  "case_id": "v2-eval-benign-18",
+  "configs": [
+   "pdirect",
+   "pintent",
+   "target_only"
+  ]
+ },
+ "R49": {
+  "case_id": "v2-eval-benign-06",
+  "configs": [
+   "pdirect",
+   "target_only"
+  ]
+ },
+ "R50": {
+  "case_id": "v2-eval-benign-12",
+  "configs": [
+   "pdirect",
+   "pintent",
+   "target_only"
+  ]
+ }
+}

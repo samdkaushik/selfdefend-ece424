@@ -1,4 +1,4 @@
-# 2026-11-21_yasmin_ref_pdirect_target_001
+# yasmin_ref_pdirect_target_001
 
 Owner: Yasmin Shahlamedina (sy805). Run time (UTC): 2026-11-21T15:38:15.660167+00:00
 
@@ -6,7 +6,7 @@ Owner: Yasmin Shahlamedina (sy805). Run time (UTC): 2026-11-21T15:38:15.660167+0
 Reference run on the held-out evaluation file: target-only and Pdirect (Sharon's defense) via defenses/pdirect/evaluate.py, one repeat. Provides same-input baselines.
 
 ## Exact command
-python3 defenses/pdirect/evaluate.py --dataset defenses/pdirect/evaluation_v2.jsonl --repeats 1 --out experiments/pintent/2026-11-21_yasmin_ref_pdirect_target_001 --machine-note "Apple M1, 8 GB RAM, ollama version is 0.40.14, models warmed before run, other apps closed"
+python3 defenses/pdirect/evaluate.py --dataset defenses/pdirect/evaluation_v2.jsonl --repeats 1 --out experiments/pintent/yasmin_ref_pdirect_target_001 --machine-note "Apple M1, 8 GB RAM, ollama version is 0.40.14, models warmed before run, other apps closed"
 
 ## Code revision
 Pintent/Pdirect code as of commit 432ed5c (since squashed into b64c02e and merged as df4182c; the code files are unchanged, see the source hashes in manifest.json), working tree clean; frozen Pintent prompt sha256 1294c928af7ea99e7c5d74a33b5af14370ac630084894a0e268f34b65defa56f.
@@ -30,4 +30,4 @@ Models (Ollama):
 48 cases per config, 0 errors. Pdirect statuses: 25 blocked, 23 ok. Target-only had 1 truncated target response. See summary.json.
 
 ## Limitations
-Single pass, sequential gate (not the paper's concurrent design), n=24 attack and 24 benign cases. Latency is not paired with target-only when the run is a separate pass. Human review: see experiments/pintent/2026-11-21_yasmin_review_001/README.md.
+Single pass, sequential gate (not the paper's concurrent design), n=24 attack and 24 benign cases. Latency is not paired with target-only when the run is a separate pass. Human review: see experiments/pintent/yasmin_review_001/README.md.

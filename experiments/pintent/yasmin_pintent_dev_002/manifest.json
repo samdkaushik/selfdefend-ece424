@@ -1,20 +1,20 @@
 {
-  "timestamp_utc": "2026-11-21T15:41:09.255931+00:00",
+  "timestamp_utc": "2026-11-21T15:28:58.032666+00:00",
   "command": [
     "/Library/Frameworks/Python.framework/Versions/3.10/bin/python3",
     "defenses/pintent/defense.py",
     "--dataset",
-    "defenses/pdirect/evaluation_v2.jsonl",
+    "defenses/pdirect/development_v2.jsonl",
     "--out",
-    "experiments/pintent/2026-11-21_yasmin_pintent_eval_001",
+    "experiments/pintent/yasmin_pintent_dev_002",
     "--machine-note",
     "Apple M1, 8 GB RAM, ollama version is 0.40.14, models warmed before run, other apps closed"
   ],
   "config": "pintent",
-  "dataset_sha256": "6c669da5a80dcc38bfccd0bf89a7665d72bf10ec7edd060d709aa57971f7b7a4",
+  "dataset_sha256": "c56eb1777b04075217220cf0f151d6c534989523385a46b8fd56469545e72120",
   "source_sha256": {
     "defenses/pintent/defense.py": "37639d24abf02b7adc6ba6a5c1e59d500795610e3e5cfb66a6d402b9e41ca638",
-    "defenses/pintent/detector_prompt.txt": "1294c928af7ea99e7c5d74a33b5af14370ac630084894a0e268f34b65defa56f",
+    "defenses/pintent/detector_prompt.txt": "837ab815495038b5a156be96e0a6ae124ac9e1e4c677c6bd31f53e6f169c94c1",
     "harness.py": "85adda0c585e7226717f41381a67bdce61e016d8eec23532cc8a6872f94745fc",
     "defenses/pdirect/defense.py": "5b0a99efac751e2413a2b1021705b008bcb87764a2480abb753f3a0da5adc11d"
   },

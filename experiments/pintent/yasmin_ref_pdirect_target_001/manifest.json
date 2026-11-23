@@ -1,63 +1,27 @@
 {
-  "timestamp_utc": "2026-11-21T15:28:58.032666+00:00",
+  "timestamp_utc": "2026-11-21T15:38:15.660167+00:00",
   "command": [
     "/Library/Frameworks/Python.framework/Versions/3.10/bin/python3",
-    "defenses/pintent/defense.py",
+    "defenses/pdirect/evaluate.py",
     "--dataset",
-    "defenses/pdirect/development_v2.jsonl",
+    "defenses/pdirect/evaluation_v2.jsonl",
+    "--repeats",
+    "1",
     "--out",
-    "experiments/pintent/2026-11-21_yasmin_pintent_dev_002",
+    "experiments/pintent/yasmin_ref_pdirect_target_001",
     "--machine-note",
     "Apple M1, 8 GB RAM, ollama version is 0.40.14, models warmed before run, other apps closed"
   ],
-  "config": "pintent",
-  "dataset_sha256": "c56eb1777b04075217220cf0f151d6c534989523385a46b8fd56469545e72120",
-  "source_sha256": {
-    "defenses/pintent/defense.py": "37639d24abf02b7adc6ba6a5c1e59d500795610e3e5cfb66a6d402b9e41ca638",
-    "defenses/pintent/detector_prompt.txt": "837ab815495038b5a156be96e0a6ae124ac9e1e4c677c6bd31f53e6f169c94c1",
-    "harness.py": "85adda0c585e7226717f41381a67bdce61e016d8eec23532cc8a6872f94745fc",
-    "defenses/pdirect/defense.py": "5b0a99efac751e2413a2b1021705b008bcb87764a2480abb753f3a0da5adc11d"
-  },
-  "shadow_model": "qwen2.5:1.5b",
-  "target_model": "qwen2.5:1.5b",
-  "settings": {
-    "temperature": 0,
-    "seed": 424,
-    "num_predict": 256
-  },
-  "timeout_seconds": 120,
-  "detector_settings": {
-    "temperature": 0,
-    "seed": 424,
-    "num_predict": 256,
-    "num_ctx": 4096
-  },
-  "verdict_schema": {
-    "type": "object",
-    "properties": {
-      "intent": {
-        "type": "string"
-      },
-      "decision": {
-        "type": "string",
-        "enum": [
-          "ALLOW",
-          "BLOCK"
-        ]
-      }
-    },
-    "required": [
-      "intent",
-      "decision"
-    ],
-    "additionalProperties": false
-  },
-  "max_prompt_bytes": 3000,
-  "reused_from_pdirect": [
-    "read_cases",
-    "runtime_metadata"
-  ],
+  "repeats": 1,
+  "order_seed": 424,
   "machine_note": "Apple M1, 8 GB RAM, ollama version is 0.40.14, models warmed before run, other apps closed",
+  "dataset_sha256": "6c669da5a80dcc38bfccd0bf89a7665d72bf10ec7edd060d709aa57971f7b7a4",
+  "source_sha256": {
+    "defenses/pdirect/evaluate.py": "448a40f2ac0873e55f480a1110f4e2f8c200ff788d417d0b84c38e0903812f7f",
+    "defenses/pdirect/defense.py": "5b0a99efac751e2413a2b1021705b008bcb87764a2480abb753f3a0da5adc11d",
+    "harness.py": "85adda0c585e7226717f41381a67bdce61e016d8eec23532cc8a6872f94745fc",
+    "defenses/pdirect/detector_prompt.txt": "c93be07ae675490a9a2f20c72c45d2295db34e340b143280d5c56a6e616d4a43"
+  },
   "runtime": {
     "platform": "macOS-15.3.1-arm64-arm-64bit",
     "python": "3.10.7",
@@ -119,5 +83,36 @@
       ]
     }
   },
-  "limitations": "Sequential gate; statuses are not safety or usefulness scores."
+  "settings": {
+    "temperature": 0,
+    "seed": 424,
+    "num_predict": 256
+  },
+  "detector_settings": {
+    "temperature": 0,
+    "seed": 424,
+    "num_predict": 256,
+    "num_ctx": 4096
+  },
+  "max_prompt_bytes": 3000,
+  "verdict_schema": {
+    "type": "object",
+    "properties": {
+      "decision": {
+        "type": "string",
+        "enum": [
+          "ALLOW",
+          "BLOCK"
+        ]
+      }
+    },
+    "required": [
+      "decision"
+    ],
+    "additionalProperties": false
+  },
+  "shadow_model": "qwen2.5:1.5b",
+  "target_model": "qwen2.5:1.5b",
+  "timeout_seconds": 120,
+  "design": "Warmup excluded; shuffled cases each repeat and randomized config order within each case pair. Shared model resident; sequential requests. Full-response latency, nearest-rank p95. Repeats are not independent prompts."
 }
